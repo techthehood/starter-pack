@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+// allows us to us es modules without needing to transpile to different node js
+// versions that may not have that support
+require = require('esm')(module/*, options*/);
+
+// call the cli fn from cli.js and pass in all the args from the command line
+require('../src/cli').cli(process.argv);
+
+// GOTCHA: this also is running node so it takes regular node comments

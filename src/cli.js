@@ -1,6 +1,9 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
+import prompts from 'prompts';
 import {createProject} from './main';
+import {templateChoices} from './template-choices';
+import chalk from 'chalk';
 
 function parseArgumentsToOptions(rawArgs){
   const args = arg(
@@ -25,7 +28,7 @@ function parseArgumentsToOptions(rawArgs){
 }
 
 async function promptForMissingOptions(options) {
-  const defaultTemplate = "JavaScript";
+  const defaultTemplate = "Hbs";
 
   if(options.skipPrompts){
     return {
@@ -38,11 +41,15 @@ async function promptForMissingOptions(options) {
 
   if(!options.template){
     questions.push({
-      type: "list",
+      type: "rawlist",
       name: "template",
-      message: "Please choose which project template to use",
-      choices: ["JavaScript", "Typescript"],
-      default: defaultTemplate
+      message: [`Please choose which project template to use`,
+      `\n\n ${chalk.cyan("(type the number next to the template you want to select)")}`,
+      `\n\n${chalk.yellow.bold("NOTE: There are no more choices to reveal (ignore message below)")}`,
+      `\n\n`].join(" "),
+      choices: [...templateChoices],
+      default: defaultTemplate,
+      pageSize: templateChoices.length
     });
   }// end if !.template
 
@@ -56,6 +63,7 @@ async function promptForMissingOptions(options) {
   }// end if !.git
 
   const answers = await inquirer.prompt(questions);
+  // const answers = await prompts(questions);// indicator still not changing
 
   return {
     ...options,

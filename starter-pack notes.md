@@ -59,6 +59,14 @@ thats it.
       "cli",
       "starter-pack"
     ],
+    "repository":{
+      "type": "git",
+      "url":"https://github.com/scopedPkgName/starter-pack.git"
+    },
+    "bugs":{
+      "url":"https://github.com/scopedPkgName/starter-pack/issues"
+    },
+    "homepage":"https://github.com/scopedPkgName/starter-pack",
     ...
   }
 ```
@@ -85,6 +93,14 @@ versions that may not have that support
 
 ```
   // using template: args instead of template: args._[0]
+
+  {
+    ...
+    // template: args._[0],
+    template: args,
+    ...
+  }
+
   $ starter-pack cli --git
 
   // returns
@@ -230,3 +246,56 @@ Listr is responsible for running tasks one of which installs the npm pkgs
 ```
   npm i esm arg inquirer ncp chalk execa pkg-install listr
 ```
+
+#### **GOTCHA:** inquirer list and rawlist is buggy
+[inquirer research](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)   
+
+im having 2 issues.
+1. using the up/down arrow isn't showing visible changes in the terminal (although it is selecting)
+2. because up/down is broken the list won't show more options under the fold
+
+[inquirer docs](https://www.npmjs.com/package/inquirer)   
+
+**hack: use pageSize**
+pageSize: (Number) Change the number of lines that will be rendered when using list, rawList, expand or checkbox.
+
+```
+    questions.push({
+      type: "rawlist",
+      name: "template",
+      message: [`Please choose which project template to use`,
+      `\n\n ${chalk.cyan("(type the number next to the template you want to select)")}`,
+      `\n\n${chalk.yellow.bold("NOTE: There are no more choices to reveal (ignore message below)")}`,
+      `\n\n`].join(" "),
+      choices: [...templateChoices],
+      // choices: ["JavaScript", "TypeScript"],
+      default: defaultTemplate,
+      pageSize: templateChoices.length
+    });
+```
+> it actually works nicely with the right message
+
+first (hacky) message
+
+```
+  message: [`Please choose which project template to use`,
+  `\n\n ${chalk.cyan("(type the number next to the template you want to select)")}`,
+  `\n\n${chalk.yellow.bold("NOTE: There are no more choices to reveal (ignore message below)")}`,
+  `\n\n`].join(" "),
+```
+
+better (less-hacky) message with pageSize
+
+```
+  message: [`Please choose which project template to use`,
+  `\n\n ${chalk.cyan("(type the number next to the template you want to select)")}`,
+  `\n\n${chalk.yellow.bold("NOTE: There are no more choices to reveal (ignore message below)")}`,
+  `\n\n`].join(" "),
+```
+
+#### adding new templates
+
+1. paste the template into the templates folder
+2. add the template folder name to the src/template-coices.js file
+
+thats it!

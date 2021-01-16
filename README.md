@@ -35,4 +35,3 @@ follow the prompts if any or add flags
 thats it.
 <br/>
 # starter-pack
-# starter-pack

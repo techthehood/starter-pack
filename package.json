@@ -1,15 +1,7 @@
 {
   "name": "@techthehood/starter-pack",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A CLI to bootstrap my projects",
-  "repository":{
-    "type": "git",
-    "url":"https://github.com/techthehood/starter-pack.git"
-  },
-  "bugs":{
-    "url":"https://github.com/techthehood/starter-pack/issues"
-  },
-  "homepage":"https://github.com/techthehood/starter-pack",
   "main": "src/index.js",
   "bin": {
     "@techthehood/starter-pack": "bin/starter-pack",
@@ -18,6 +10,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techthehood/starter-pack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techthehood/starter-pack/issues"
+  },
+  "homepage": "https://github.com/techthehood/starter-pack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,6 +35,7 @@
     "inquirer": "^7.3.3",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
-    "pkg-install": "^1.0.0"
+    "pkg-install": "^1.0.0",
+    "prompts": "^2.4.0"
   }
 }

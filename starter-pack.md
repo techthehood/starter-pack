@@ -11,6 +11,7 @@
 ```
   mkdir my-dir-name && cd my-dir-name
 ```
+> GOTCHA: don't forget the &&
 
 - run the project creator
 
@@ -34,7 +35,7 @@ follow the prompts if any or add flags
 
   npx @techthehood/starter-pack -g -i basic
 ```
-
+> what is basic doing? why is that a thing? (i don't think it is) see src/template-src
 
 thats it.
 <br/>
@@ -210,7 +211,7 @@ init git - uses **execa**
     }
   }// initGit
 ```
-Listr is responsible for running tasks one of which installs the npm pkgs
+> Listr is responsible for running tasks one of which installs the npm pkgs
 
 ```
   projectInstall({

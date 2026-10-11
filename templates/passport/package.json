@@ -1,0 +1,36 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "mongoose": "^5.12.7",
+    "passport": "^0.4.1",
+    "passport-facebook-token": "^3.3.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-google-plus-token": "^2.1.0",
+    "passport-google-token": "^0.1.2",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^0.19.1"
+  },
+  "notes": {
+    "bcrypt-install-note1": "GOTCHA: if bcrypt fails to install, delete it from the dependencies and install it separately",
+    "bcrypt-install-note2": "https://stackoverflow.com/questions/54674387/how-do-nodes-bcrypt-and-bcryptjs-libraries-differ"
+  }
+}

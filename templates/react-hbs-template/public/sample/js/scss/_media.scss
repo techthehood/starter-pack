@@ -1,0 +1,45 @@
+  $desktop: 1199px;
+  $tablet: 800px;
+  $mobile: 600px;
+
+  @mixin XXL{
+    @media only screen and (min-width: #{$desktop}){
+      // GOTCHA: change to XL mixin
+      @content;
+    }
+  }// desktop
+
+  @mixin desktop{
+    @media only screen and (max-width: #{$desktop}){
+      // GOTCHA: change to XL mixin
+      @content;
+    }
+  }// desktop
+
+
+
+  @mixin tablet{
+    @media only screen and (max-width: #{$tablet}){
+      // GOTCHA: change to XL mixin
+      @content;
+    }
+  }// tablet
+
+  @mixin mobile{
+    @media only screen and (max-width: #{$mobile}){
+      // GOTCHA: change to XL mixin
+      @content;
+    }
+  }// mobile
+
+  // @include desktop{
+  //   font-size: 40px $mp;
+  // }
+
+  // @include tablet{
+  //   font-size: 32px $mp;
+  // }
+
+  // @include mobile{
+  //   font-size: 30px $mp;
+  // }

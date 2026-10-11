@@ -80,3 +80,8 @@ emphasis on this babel config script tag
   <script type="text/babel" src="index.js" data-presets="my-preset"></script>
 ```
 **also for this method to work App.js has to also be added to the script tag (its possible all scripts are going to have to be added the long way - there really isn't a bundler so maybe thats why import alone isn't working.  however i think import works using local files instead of the cdn files)**
+
+LATER: if there was a bundler (webpack) and a bundle.js file being imported, i think the imports would work because the reference file would all be available through the bundle.js file
+
+> GOTCHA: does it still need to use import App... if im importing app in the script tag?  Yes!
+> otherwise: **Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.**

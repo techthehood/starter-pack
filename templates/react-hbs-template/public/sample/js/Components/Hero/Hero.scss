@@ -1,0 +1,168 @@
+  @use "../../scss/media";
+$mp: !important;
+
+
+@mixin b-title{
+  .banner-title {
+    h1{@content;}
+  }
+}
+
+.root{
+  .home{
+    .hero-image{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 4rem;
+      img{width:80%;}
+    }
+    .drawer-nav{
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .banner-title {
+      padding: 0 2rem;
+      h1, h2, h3{color: var(--main-color);}
+      h1{font-size: 48px;}
+      h2{font-size: 32px;}
+      h3{font-size: 24px;}
+    }
+    
+    .event-subtitle{
+      text-transform: uppercase;
+      font-family: "Montserrat-Light";
+          color: var(--main-color);
+    }
+    .event-description{ strong {color: var(--main-color);}}
+    .register-now-btn {
+      color: var(--white);
+      background-color: var(--main-color);
+      &:hover{
+        color: var(--main-color);
+        background-color: var(--white);   
+        i {
+            color: var(--main-color);
+        }
+      }
+      i {
+        color: var(--white);
+      }
+    }
+
+    i {
+      color: var(--main-color);
+    }
+
+  
+    .top-social{ 
+      a:hover {
+          color: var(--main-color);
+      }
+    }
+  
+    .main-menu{ 
+      .navbar-nav > li > a{
+        &:hover {
+          color: var(--main-color) !important;
+        }
+        &:focus, &:active{
+          color: var(--main-color) $mp;
+        }
+      }
+    }// main-menu
+    
+    
+    .drawer-menu ul.sub-menu li a:hover, .drawer-menu ul.sub-menu li a:active, .drawer-menu ul.sub-menu li a:focus, .nav.navbar-nav ul.sub-menu li a:hover, .nav.navbar-nav ul.sub-menu li a:active, .nav.navbar-nav ul.sub-menu li a:focus {
+      color: #ffffff;
+      background-color: var(--main-color);
+    }
+    .drawer-menu .sub-menu, .nav.navbar-nav ul.sub-menu {
+      border-top-color: var(--main-color);
+    }
+    .drawer-menu-item:hover {
+      background-color: var(--main-color);
+    }
+    .header-left {
+      color: var(--main-color);
+    }
+  }// home
+
+  @include media.XXL{
+    #home{
+      padding-top: 3rem;
+      .hero-image{  margin: 0 auto 2rem; width:53%; img{/*width: 30%;*/}  }
+      .banner-title h1 {font-size: 2.2rem;  margin-bottom: .5rem;}
+      .event-schedule {    margin: 2rem 50px; padding: unset;}
+      .event-description { font-size: 1.5rem; margin: 1rem 15%;}
+      .register-now-section { margin: 2rem; a{padding: 1rem;}}
+    }
+  }
+
+  @include media.desktop{
+    @include b-title{
+      font-size: 40px $mp;
+    }
+  }
+
+  @include media.tablet{
+    @include b-title{
+      font-size: 32px $mp;
+    }
+  }
+
+  // @include media.mobile{
+  //   @include b-title{
+  //     font-size: 30px $mp;
+  //   }
+  // }
+}// root
+
+%ham_menu{
+  
+}
+
+@mixin hamburger{
+  .drawer-hamburger-icon{
+    &:after, &:before{@content;}
+    background-color: var(--main-color);
+  }
+}// hamburger
+
+.drawer--left{
+  &.drawer-open{
+    .drawer-hamburger{
+      background-color: var(--main-color) $mp;
+    }
+    @include hamburger{
+      background-color: var(--white);
+    }
+  }
+  .drawer-hamburger{
+    // background-color: var(--main-color) $mp;
+  }
+  @include hamburger{
+    background-color: var(--main-color);
+  }
+}// left
+
+.header-image{
+  width: 5rem;
+  left: 1rem;
+  // top: 3rem; 
+  position: fixed;
+  background-color: #000;
+  z-index: 104;
+  @include media.XXL{
+    width: 13rem;
+  }
+  @include media.desktop{
+    width: 11rem;
+  }
+  @include media.tablet{
+    width: 9rem;
+  }
+  // margin-top: 1rem;
+  // @include media.tablet{margin-top: .5rem;}
+}// header-image

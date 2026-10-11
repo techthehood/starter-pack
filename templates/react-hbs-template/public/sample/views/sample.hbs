@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <title>Jobs Not Guns | Responsive HTML5 template</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- attach CSS styles -->
+
+  <!-- html template styles (in sample/css folder)-->
+  <link href="sample/css/font-awesome.min.css" rel="stylesheet">
+  <link href="sample/css/bootstrap.min.css" rel="stylesheet">
+  <link href="sample/css/owl.transitions.css" rel="stylesheet" />
+  <link href="sample/css/owl.carousel.css" rel="stylesheet" />
+  <link href="sample/css/owl.theme.css" rel="stylesheet" />
+  <link href="sample/css/style.css" rel="stylesheet" />
+  <link href="sample/css/responsive.css" rel="stylesheet" />
+  <link href="sample/css/sample.css" rel="stylesheet" />
+  <!-- html template styles -->
+
+  {{>(vendor 'w3schools' use_local_files true)}}
+  {{>(vendor 'oauth_links' use_local_files true)}}
+
+  <!-- production variable found in routers/sample.js-->
+  {{>(bundle 'bundle_css' production)}}{{!-- see router/sample.js for 'production' variable --}}
+  <link rel="manifest" href="./sample/js/manifest.json" />
+
+</head>
+
+<body>
+  <div class="se-pre-con"></div>
+  <!--  BODY PAGE CONTENT -->
+  <!-- navigation panel -->
+  <div class="modal_cont"></div>
+  <div class="root"></div>
+  <!-- first section - Home -->
+
+  <!-- /first section -->
+
+  <!-- Bottom Social -->
+
+  <!-- /Bottom Social -->
+
+  <!-- Footer -->
+
+  <!-- .Footer -->
+
+  <!-- attach JavaScripts -->
+  <script type="text/javascript" src="sample/js/lib/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="sample/js/lib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+
+  <script>
+    function initMap() {
+      var uluru = { lat: 40.302799, lng: -76.768982 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <!-- html template js -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnBukuPx3MQ3bJLLD-e4NKHL56g1nsRXM&callback=initMap"> </script>
+  <script src="sample/js/lib/iscroll.js"></script>
+  <script src="sample/js/lib/menu.js" charset="utf-8"></script>
+  <script src="sample/js/lib/owl.carousel.min.js"></script>
+  <script src="sample/js/lib/classie.js"></script>
+  <script type="text/javascript" src="sample/js/lib/custom-menu.js"></script>
+  <script type="text/javascript" src="sample/js/lib/eventpremium-script.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  <!-- html template js (in js/lib folder)-->
+
+  <!-- production variable found in routers/sample.js-->
+  {{>(bundle 'bundle_js' production)}}
+</body>
+
+</html>

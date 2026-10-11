@@ -24,7 +24,7 @@ console.log(`[dirname]`,__dirname);
 console.log(`[dirname public path]`,path.join(__dirname,"../public"));
 
 // var nR_Proxy = proxy('/req', {
-//   target: 'https://sunzao.us',
+//   target: 'https://example.com',
 //   changeOrigin: true
 // })
 

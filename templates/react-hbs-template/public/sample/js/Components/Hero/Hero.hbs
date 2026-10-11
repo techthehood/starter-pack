@@ -1,0 +1,81 @@
+<!-- first section - Home -->
+<section id="home" class="home drawer drawer--left">
+  <div class="banner-title ">
+    <div class="hero-image">
+      <img src="jng/images/jobsnotguns.png" alt=""></div>
+    <h1><strong>{{title_bold}}</strong> {{title}}</h1>
+    <h3 class="event-subtitle">{{sub}}</h3>
+    <div class="event-schedule"> <span class="event-date"><i class="fa fa-flag" aria-hidden="true"></i> {{day}} {{date_short}}<span
+          class="jng-mobile">{{date_long}}</span></span> <span class="event-place"><i class="fa fa-heart"
+          aria-hidden="true"></i> {{city_short}}<span class="jng-mobile">{{city_long}}</span> {{city}}</span> </div>
+    <p class="event-description">{{desc1}} <strong>{{desc_orange}}</strong> {{desc3}}.</p>
+    <div class="register-now-section"> <a href="#" class="register-now-btn">{{button}}<i
+          class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+    {{!-- <div class="top-social"> 
+      <a href="" class="fa fa-facebook" aria-hidden="true"></a> 
+      <a href="" class="fa fa-twitter" aria-hidden="true"></a> 
+      <a href="" class="fa fa-linkedin" aria-hidden="true"></a> 
+      <a href="" class="fa fa-vimeo" aria-hidden="true"></a> 
+      <a href="" class="fa fa-google-plus" aria-hidden="true"></a> 
+      <a href="" class="fa fa-instagram" aria-hidden="true"></a> 
+    </div> --}}
+  </div>
+  <nav class="navbar navbar-default main-menu hidden-xs menu">
+    <div class="container-fluid">
+      <img src="jng/images/jobsnotguns.png" alt="" class="header-image">
+      <div class="header-left">
+        <p class="no-margin"><strong>{{title1}}</strong> {{title2}}</p>
+      </div>
+      <div class="header-right">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main"
+            data-target-2=".side-collapse-container"> <span class="sr-only">Toggle navigation</span> <span
+              class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+          <ul class="nav navbar-nav">
+            {{!-- <li><a href=#{{menu.[0].href}}>{{menu.[0].title}}</a><span>|</span></li> --}}
+            <li><a href=#{{menu.[1].href}}>{{menu.[1].title}}</a><span>|</span></li>
+            <li><a href=#{{menu.[2].href}}>{{menu.[2].title}}</a><span>|</span></li>
+            {{!-- <li><a href=#{{menu.[3].href}}>{{menu.[3].title}}</a><span>|</span></li> --}}
+            {{!-- <li><a href=#{{menu.[4].href}}>{{menu.[4].title}}</a><span>|</span></li> --}}
+            <li><a href=#{{menu.[5].href}}>{{menu.[5].title}}</a><span>|</span></li>
+            {{!-- <li><a>Elements</a> --}}
+              <ul class="sub-menu">
+                {{!-- <li><a href=#{{menu.[0].href}}>{{menu.[0].title}}</a></li> --}}
+                <li><a href=#{{menu.[1].href}}>{{menu.[1].title}}</a></li>
+                <li><a href=#{{menu.[2].href}}>{{menu.[2].title}}</a></li>
+                {{!-- <li><a href=#{{menu.[3].href}}>{{menu.[3].title}}</a></li> --}}
+                {{!-- <li><a href=#{{menu.[4].href}}>{{menu.[4].title}}</a></li> --}}
+                <li><a href=#{{menu.[5].href}}>{{menu.[5].title}}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu hidden-sm hidden-md hidden-lg">
+    <div class="drawer-container">
+      <div class="drawer-navbar-header">
+        <button type="button" class="drawer-toggle drawer-hamburger"> <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span> </button>
+      </div>
+      <nav class="drawer-nav">
+        <div class="header-left">
+          <p class="no-margin"><strong>Jobs Not</strong> Guns</p>
+        </div>
+        <ul class="drawer-menu">
+          <li><a href="#home" class="drawer-menu-item">Home</a></li>
+          <li><a class="drawer-menu-item" href=#{{menu.[0].href}}>{{menu.[0].title}}</a></li>
+          <li><a class="drawer-menu-item" href=#{{menu.[1].href}}>{{menu.[1].title}}</a></li>
+          {{!-- <li><a class="drawer-menu-item" href=#{{menu.[2].href}}>{{menu.[2].title}}</a></li> --}}
+          {{!-- <li><a class="drawer-menu-item" href=#{{menu.[3].href}}>{{menu.[3].title}}</a></li> --}}
+          {{!-- <li><a class="drawer-menu-item" href=#{{menu.[4].href}}>{{menu.[4].title}}</a></li> --}}
+          <li><a class="drawer-menu-item" href=#{{menu.[5].href}}>{{menu.[5].title}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+<!-- /first section -->
